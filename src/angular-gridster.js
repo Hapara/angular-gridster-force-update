@@ -655,6 +655,13 @@
 								gridster.curColWidth = gridster.colWidth;
 							}
 
+							if(!gridster.curColWidth){
+								$timeout( function () {
+									refresh();
+								});
+								return false;
+							}
+
 							gridster.curRowHeight = gridster.rowHeight;
 							if (typeof gridster.rowHeight === 'string') {
 								if (gridster.rowHeight === 'match') {
